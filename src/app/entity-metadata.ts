@@ -4,6 +4,6 @@ const entityMetadata:EntityMetadataMap = {
     Post: {}
 }
 
-export const entityConfig: EntityDataModuleConfig{
+export const entityConfig: EntityDataModuleConfig ={
     entityMetadata,
 }
