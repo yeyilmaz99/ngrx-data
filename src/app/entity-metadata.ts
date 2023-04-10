@@ -1,9 +1,15 @@
-import { EntityDataModuleConfig, EntityMetadataMap } from "@ngrx/data";
+// import { EntityDataModuleConfig, EntityMetadataMap } from "@ngrx/data";
 
-const entityMetadata:EntityMetadataMap = {
-    Post: {}
-}
+// const entityMetadata:EntityMetadataMap = {
+//     Post: {
+//         entityDispatcherOptions:{
+//             optimisticUpdate:true,
+//             optimisticDelete:true
+//         }
+//     }
+// }
 
-export const entityConfig: EntityDataModuleConfig ={
-    entityMetadata,
-}
+
+// export const entityConfig: EntityDataModuleConfig ={
+//     entityMetadata,
+// }
