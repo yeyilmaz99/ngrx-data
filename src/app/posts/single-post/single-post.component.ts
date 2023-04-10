@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../post.service';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-single-post',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-post.component.css']
 })
 export class SinglePostComponent implements OnInit {
-
-  constructor() { }
+  post:Post
+  constructor(private route:ActivatedRoute,private postService:PostService) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    this.postService.entities$.subscribe(posts => {
+      this.post = posts.find(post => post.id === id)
+    })
   }
 
 }
