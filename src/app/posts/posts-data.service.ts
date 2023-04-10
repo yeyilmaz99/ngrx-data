@@ -35,4 +35,10 @@ export class PostsDataService extends DefaultDataService<Post> {
   update(post: Update<Post>):Observable<Post>{
     return this.http.put<Post>(`https://vue-completecourse.firebaseio.com/posts/${post.id}.json`,{...post.changes})
   }
+
+  delete(id:string):Observable<string> {
+    return this.http.delete(`https://vue-completecourse.firebaseio.com/posts/${id}.json`).pipe(map(data => {
+      return id;
+    }))
+  }
 }
